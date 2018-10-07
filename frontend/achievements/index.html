@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
+    <title>Platafórma de Lógica</title>
+
+    <link rel="stylesheet" href="../assets/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/modules/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+
+    <link rel="stylesheet" href="../assets/modules/summernote/summernote-lite.css">
+    <link rel="stylesheet" href="../assets/css/demo.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/skins/lightblue.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="main-wrapper">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar">
+                <form class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3">
+                        <li>
+                            <a href="#" data-toggle="sidebar" class="nav-link nav-link-lg">
+                                <i class="ion ion-navicon-round"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </form>
+                <ul class="navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
+                            <i class="ion ion-android-person d-lg-none"></i>
+                            <div class="d-sm-none d-lg-inline-block">Olá, Fulano</div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="#" class="dropdown-item has-icon">
+                                <i class="ion ion-log-out"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div id="side"></div>
+            <div class="main-content">
+                <section class="section">
+                    <h1 class="section-header">
+                        <div>Conquistas</div>
+                    </h1>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Praticou 5 vezes</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <i class="ion ion-ios-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Conquista para quem completou 5 exercícios
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h4>Praticou 10 vezes</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon bg-primary">
+                                        <i class="ion ion-ios-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Conquista para quem completou 10 exercícios
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card card-info desabilitado">
+                                <div class="card-header">
+                                    <h4>Praticou 15 vezes</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon bg-info">
+                                        <i class="ion ion-ios-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Conquista para quem completou 15 exercícios
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card card-warning desabilitado">
+                                <div class="card-header">
+                                    <h4>Praticou 20 vezes</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon bg-warning">
+                                        <i class="ion ion-ios-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Conquista para quem completou 20 exercícios
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Praticou 5 vezes</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <i class="ion ion-ios-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Conquista para quem completou 5 exercícios
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h4>Praticou 10 vezes</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon bg-primary">
+                                        <i class="ion ion-ios-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Conquista para quem completou 10 exercícios
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card card-info ">
+                                <div class="card-header">
+                                    <h4>Praticou 15 vezes</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon bg-info">
+                                        <i class="ion ion-ios-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Conquista para quem completou 15 exercícios
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card card-warning desabilitado">
+                                <div class="card-header">
+                                    <h4>Praticou 20 vezes</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon bg-warning">
+                                        <i class="ion ion-ios-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Conquista para quem completou 20 exercícios
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Praticou 5 vezes</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <i class="ion ion-ios-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Conquista para quem completou 5 exercícios
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h4>Praticou 10 vezes</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon bg-primary">
+                                        <i class="ion ion-ios-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Conquista para quem completou 10 exercícios
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card card-info ">
+                                <div class="card-header">
+                                    <h4>Praticou 15 vezes</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon bg-info">
+                                        <i class="ion ion-ios-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Conquista para quem completou 15 exercícios
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card card-warning ">
+                                <div class="card-header">
+                                    <h4>Praticou 20 vezes</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon bg-warning">
+                                        <i class="ion ion-ios-star"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Conquista para quem completou 20 exercícios
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/modules/jquery.min.js"></script>
+    <script src="../assets/modules/popper.js"></script>
+    <script src="../assets/modules/tooltip.js"></script>
+    <script src="../assets/modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../assets/modules/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
+    <script src="../assets/js/sa-functions.js"></script>
+    <script src="../assets/modules/chart.min.js"></script>
+    <script src="../assets/modules/summernote/summernote-lite.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/js/sideBar.js"></script>
+</body>
+
+</html>

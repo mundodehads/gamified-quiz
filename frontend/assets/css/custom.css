@@ -1,7 +1,31 @@
-/**
- *
- * You can write your CSS code here, DO NOT touch the default JavaScript file
- * because it will make it harder for you to update.
- * 
- */
+.card-body .card-icon {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    line-height: 140px;
+    font-size: 80px;
+}
 
+.card-header, .card-body, .card-footer{
+    text-align: center;
+}
+
+.desabilitado{
+    opacity: 0.3;
+    color: grey;
+}
+
+.card-bodyex .card-icon {
+    font-size: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card-icon.bg-dark i{
+    color: white;
+}
+
+.card .card-footer {
+    padding-top: 10px;
+}
