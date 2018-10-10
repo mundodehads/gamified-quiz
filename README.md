@@ -23,14 +23,16 @@ cd frontend
 - Then run the npm command:
 
 ```bash
-npm run dev
+npm run server
 ```
 
-- After the task run, go to [localhost:3000/home](localhost:3000/home) and navigate through.
+- After the task run, go to [http://localhost:8080/](http://localhost:8080/) and navigate through.
 
 ## Back-end
 
 Back-end is a serverless api build with APIGateway + Lambda, so we follow FaaS structure.
+
+To run anything on the backend folder, you **must** install it dependencies with npm with `npm install`!
 
 ### How to test
 
