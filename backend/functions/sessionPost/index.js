@@ -47,7 +47,7 @@ exports.handler = async (event) => {
           { title: 'PRATICOU 15 VEZES', description: 'Conquista para quem completou 15 exercícios', acquired: false, rarity: 3 },
           { title: 'PRATICOU 20 VEZES', description: 'Conquista para quem completou 20 exercícios', acquired: false, rarity: 4 }
         ],
-        taks: [
+        tasks: [
           {
             category: 'PROPOSIÇÕES',
             title: 'Lista de exercícios 1 para treinar proposições',
