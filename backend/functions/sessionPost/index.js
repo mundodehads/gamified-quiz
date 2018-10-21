@@ -4,13 +4,13 @@ exports.handler = async (event) => {
   const dynamo = new DynamoDB.DocumentClient()
 
   try {
-    const params = defineParamsToPutASession()
-    await dynamoPut(params)
+    const sessionParams = defineParamsToPutASession()
+    await dynamoPut(sessionParams)
 
     return {
       statusCode: 200,
       body: JSON.stringify({
-        sessionId: params.Item.sessionId
+        sessionId: sessionParams.Item.sessionId
       })
     }
   } catch (error) {
@@ -22,12 +22,51 @@ exports.handler = async (event) => {
   }
 
   function defineParamsToPutASession () {
+    const now = new Date()
+
     return {
       TableName: 'Session',
       Item: {
         sessionId: generateUUID(),
         name: event.body.name,
-        createdAt: new Date().toISOString()
+        createdAt: now.toISOString(),
+        practiceTimes: 0,
+        cards: {
+          playedTimes: 0,
+          achievementsAcquired: 0,
+          coinBalance: 0
+        },
+        barChart: {
+          labels: [now.toISOString().split('T')[0]],
+          data: [0]
+        },
+        achievements: [
+          { title: 'PRATICOU 5 VEZES', description: 'Conquista para quem completou 5 exercícios', acquired: false, rarity: 1 },
+          { title: 'PRATICOU 10 VEZES', description: 'Conquista para quem completou 10 exercícios', acquired: false, rarity: 2 },
+          { title: 'PRATICOU 15 VEZES', description: 'Conquista para quem completou 15 exercícios', acquired: false, rarity: 3 },
+          { title: 'PRATICOU 20 VEZES', description: 'Conquista para quem completou 20 exercícios', acquired: false, rarity: 4 }
+        ],
+        taks: [
+          {
+            category: 'PROPOSIÇÕES',
+            title: 'Lista de exercícios 1 para treinar proposições',
+            points: 0,
+            maxPoints: 100,
+            questions: [
+              {
+                question: 'Das frases abaixo, a única que representa uma proposição é:',
+                possibleAnswers: [
+                  'Que frio!',
+                  'Você foi à aula ontem?',
+                  'Ele trabalhou durante todo o evento ontem.',
+                  'Carlos é um menino alto.'
+                ],
+                answer: 3,
+                points: 10
+              }
+            ]
+          }
+        ]
       }
     }
   }
