@@ -23,12 +23,13 @@ exports.handler = async (event) => {
 
   function defineParamsToPutASession () {
     const now = new Date()
+    const body = JSON.parse(event.body)
 
     return {
       TableName: 'Session',
       Item: {
         sessionId: generateUUID(),
-        name: event.body.name,
+        name: body.name,
         createdAt: now.toISOString(),
         practiceTimes: 0,
         cards: {
@@ -75,7 +76,6 @@ exports.handler = async (event) => {
     return new Promise((resolve, reject) => {
       dynamo.put(params, (err, data) => {
         if (err) return reject(err)
-        console.log('dynamoPut', data)
         return resolve(data)
       })
     })
