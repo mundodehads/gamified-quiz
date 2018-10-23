@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
+    <title>Platafórma de Lógica</title>
+
+    <link rel="stylesheet" href="/assets/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/modules/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/assets/modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+
+    <link rel="stylesheet" href="/assets/modules/summernote/summernote-lite.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/skins/lightblue.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="main-wrapper">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar">
+                <form class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3">
+                        <li>
+                            <a href="#" data-toggle="sidebar" class="nav-link nav-link-lg">
+                                <i class="ion ion-navicon-round"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </form>
+                <ul class="navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
+                            <i class="ion ion-android-person d-lg-none"></i>
+                            <div class="d-sm-none d-lg-inline-block">Olá, Fulano</div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="/" class="dropdown-item has-icon">
+                                <i class="ion ion-log-out"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div id="side"></div>
+            <div class="main-content">
+                <section class="section">
+                    <h1 class="section-header">
+                        <div>Exercícios</div>
+                    </h1>
+                    <div class="row">
+
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <a class="ex1" data-toggle="modal" data-target="#myModal">
+                                <div class="card card-dark">
+                                    <div class="card-header">
+                                        <h4>Proposições</h4>
+                                        <small>High Score 100/100</small>
+                                    </div>
+                                    <div class="card-bodyex">
+                                        <div class="card-icon bg-dark">
+                                            <i class="ion ion-ios-list-outline"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        Lista de exercícios 1 para treinar proposições
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card card-dark">
+                                <div class="card-header">
+                                    <h4>Proposições</h4>
+                                    <small>High Score 0/100</small>
+                                </div>
+                                <div class="card-bodyex">
+                                    <div class="card-icon bg-dark">
+                                        <i class="ion ion-ios-list-outline"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Lista de exercícios 2 para treinar proposições
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card card-dark">
+                                <div class="card-header">
+                                    <h4>Operadores lógicos</h4>
+                                    <small>High Score 80/100</small>
+                                </div>
+                                <div class="card-bodyex">
+                                    <div class="card-icon bg-dark">
+                                        <i class="ion ion-ios-list-outline"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Lista de exercícios 1 para treinar operadores lógicos
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="card card-dark">
+                                <div class="card-header">
+                                    <h4>Operadores lógicos</h4>
+                                    <small>High Score 90/100</small>
+                                </div>
+                                <div class="card-bodyex">
+                                    <div class="card-icon bg-dark">
+                                        <i class="ion ion-ios-list-outline"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Lista de exercícios 2 para treinar operadores lógicos
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/modules/jquery.min.js"></script>
+    <script src="/assets/modules/popper.js"></script>
+    <script src="/assets/modules/tooltip.js"></script>
+    <script src="/assets/modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="/assets/modules/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
+    <script src="/assets/js/sa-functions.js"></script>
+    <script src="/assets/modules/chart.min.js"></script>
+    <script src="/assets/modules/summernote/summernote-lite.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+    <script src="/assets/js/custom.js"></script>
+    <script src="/assets/js/sideBar.js"></script>
+    <script src="/assets/js/exercicios.js"></script>
+</body>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Exercício X</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="fecharModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="questao" id="q1" data-question="1">
+                    <div class="pergunta">
+                        1. Sejam as proposições:
+                        <br/>
+                        <b>p: Yoshi gosta de fruta. q: Yoshi é um dinossauro.
+                        </b>
+
+                        <p>Qual alternativa abaixo traduz para a linguagem corrente:
+                            <br/>
+                            <b>“Yoshi gosta de fruta e não é um dinossauro”:</b>
+                        </p>
+                    </div>
+                    <ul class="top-20 sem-estilo">
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q1" value="a">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    p ∧ ~q
+                                </label>
+                            </div>
+                        </li>
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q1" value="b">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    p ∧ q
+                                </label>
+                            </div>
+                        </li>
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q1" value="c">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    ~p ∧ ~q
+                                </label>
+                            </div>
+                        </li>
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q1" value="d">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    p ∧ ~~q
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn btn-orange" onclick="prox();">Proximo</div>
+                </form>
+
+                <form class="questao escondido" id="q2" data-question="2">
+                    <div class="pergunta">
+                        2. Sejam as proposições:
+                        <br/>
+                        <b>p: Yoshi gosta de fruta. q: Yoshi é um dinossauro.
+                        </b>
+
+                        <p>Qual alternativa abaixo traduz para a linguagem corrente:
+                            <br/>
+                            <b>“Yoshi é um dinossauro, se e somente se come fruta”:</b>
+                        </p>
+                    </div>
+                    <ul class="top-20 sem-estilo">
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q2" value="a">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    p ∧ ~q
+                                </label>
+                            </div>
+                        </li>
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q2" value="b">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    p ∧ q
+                                </label>
+                            </div>
+                        </li>
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q2" value="c">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    q ↔ p
+                                </label>
+                            </div>
+                        </li>
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q2" value="d">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    p ∧ ~~q
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn btn-orange" onclick="prox();">Proximo</div>
+                </form>
+
+                <form class="questao escondido" id="q3" data-question="3">
+                    <div class="pergunta">
+                        3. Sejam as proposições:
+                        <br/>
+                        <b>p: Mario é um encanador, q: Sonic coleta moedas
+                        </b>
+
+                        <p>Qual alternativa abaixo traduz para a linguagem corrente:
+                            <br/>
+                            <b>“Mario é um encanador”:</b>
+                        </p>
+                    </div>
+                    <ul class="top-20 sem-estilo">
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q3" value="a">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    p ∧ ~q
+                                </label>
+                            </div>
+                        </li>
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q3" value="b">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    ~~ p
+                                </label>
+                            </div>
+                        </li>
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q3" value="c">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    ~p ∧ ~q
+                                </label>
+                            </div>
+                        </li>
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q3" value="d">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    p ∧ ~~q
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn btn-orange" onclick="prox();">Proximo</div>
+                </form>
+
+                <form class="questao escondido" id="q4" data-question="4">
+                    <div class="pergunta">
+                        4. Sejam as proposições:
+                        <br/>
+                        <b>p: Mario é um encanador, q: Sonic coleta moedas
+                        </b>
+
+                        <p>Qual alternativa abaixo traduz para a linguagem corrente:
+                            <br/>
+                            <b>“Mario não é um encanador ou Sonic coleta moedas”:</b>
+                        </p>
+                    </div>
+                    <ul class="top-20 sem-estilo">
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q4" value="a">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    p ∧ ~q
+                                </label>
+                            </div>
+                        </li>
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q4" value="b">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    p ∧ q
+                                </label>
+                            </div>
+                        </li>
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q4" value="c">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    ~p ∧ ~q
+                                </label>
+                            </div>
+                        </li>
+                        <li class="col-10 alternativa">
+                            <div class="radio" name="q4" value="d">
+                                <label>
+                                    <input type="radio" name="o3" value="A" checked="">
+                                    <span class="cr">
+                                        <i class="cr-icon fa fa-circle"></i>
+                                    </span>
+                                    ~p v q
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn btn-orange" onclick="fim();">Enviar</div>
+                </form>
+
+                <!-- <h3 class="m-bottom-20">Pergunta 1</h3>
+                <h4 class="m-bottom-20">Das frases abaixo, a única que representa uma proposição é:</h4>
+                <div class="row">
+                    <div class="col-5 alternativa">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="o3" value="A" checked="">
+                                <span class="cr">
+                                    <i class="cr-icon fa fa-circle"></i>
+                                </span>
+                                Que frio!
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-5 alternativa">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="o3" value="B" checked="">
+                                <span class="cr">
+                                    <i class="cr-icon fa fa-circle"></i>
+                                </span>
+                                Você foi à aula ontem?
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-5 alternativa">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="o3" value="C" checked="">
+                                <span class="cr">
+                                    <i class="cr-icon fa fa-circle"></i>
+                                </span>
+                                Ele trabalhou durante todo o evento ontem.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-5 alternativa">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="o3" value="D" checked="">
+                                <span class="cr">
+                                    <i class="cr-icon fa fa-circle"></i>
+                                </span>
+                                Carlos é um menino alto.
+                            </label>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="fecharModal()">Enviar</button>
+                 <button type="button" class="btn btn-primary">Save changes</button> 
+            </div>-->
+            </div>
+        </div>
+    </div>
+
+</html>

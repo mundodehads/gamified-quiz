@@ -23,10 +23,17 @@ cd frontend
 - Then run the npm command:
 
 ```bash
-npm run server
+node index.js
 ```
 
-- After the task run, go to [http://localhost:8080/](http://localhost:8080/) and navigate through.
+- After the task run, go to [http://localhost:8125/](http://localhost:8125/) and navigate through.
+
+- Pages:
+  - http://localhost:8125/ -> login
+  - http://localhost:8125/dashboard.html
+  - http://localhost:8125/exercicios.html
+  - http://localhost:8125/achievements.html
+
 
 ## Back-end
 
