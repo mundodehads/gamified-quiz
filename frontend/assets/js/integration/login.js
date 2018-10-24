@@ -7,9 +7,7 @@ function login () {
     formData[data.name] = data.value
   }
 
-  const url = BASE_PATH + '/session'
-
-  fetch(url, {
+  fetch('https://df0d3wv4t9.execute-api.us-east-1.amazonaws.com/prod/session', {
     method: 'post',
     headers: new Headers({
       'Content-Type': 'application/json'
