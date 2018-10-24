@@ -6,12 +6,20 @@ exports.handler = async (event) => {
     const achievements = await getAchievements()
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true
+      },
       body: JSON.stringify(achievements)
     }
   } catch (error) {
     console.log(error.name)
     return {
       statusCode: 400,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true
+      },
       body: JSON.stringify({ message: error.message })
     }
   }

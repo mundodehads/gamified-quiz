@@ -9,6 +9,10 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true
+      },
       body: JSON.stringify({
         sessionId: sessionParams.Item.sessionId
       })
@@ -17,6 +21,10 @@ exports.handler = async (event) => {
     console.log(error.name)
     return {
       statusCode: 400,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true
+      },
       body: JSON.stringify({ message: error.message })
     }
   }

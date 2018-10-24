@@ -5,6 +5,8 @@
  * 
  */
 
+ var BASE_PATH = 'https://df0d3wv4t9.execute-api.us-east-1.amazonaws.com/prod'
+
 $(".close").click(function(){
     $("#myModal").modal('hide');
 })
