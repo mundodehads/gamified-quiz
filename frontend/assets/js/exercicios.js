@@ -14,3 +14,14 @@ function prox(){
 function fim(){
     alert("acabou");
 };
+
+var foi = 0;
+function dica(){
+    if (foi === 0 && confirm('Para ver a dica gaste 10 moedas')) {
+        foi = 1;
+        $("#dicas").removeClass("escondido");
+    } else {
+        // Do nothing!
+    }
+}
+

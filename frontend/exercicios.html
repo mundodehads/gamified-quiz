@@ -144,9 +144,18 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Exercício X</h5>
+                <div onclick="dica();" class="pull-right" id="btnDica">
+                    <i class="ion ios-bulb-outline"></i> Dica</div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="fecharModal()">
                     <span aria-hidden="true">&times;</span>
                 </button>
+            </div>
+            <div class="escondido bloco" id="dicas">
+                <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
+                    <br/>| <b>∧</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                    <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                    <br/>| <b>↔</b> | se e somente se |
+                </p>
             </div>
             <div class="modal-body">
                 <form class="questao" id="q1" data-question="1">

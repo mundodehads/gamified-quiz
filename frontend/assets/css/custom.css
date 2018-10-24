@@ -146,3 +146,27 @@
 .escondido{
     display:none;
 }
+
+.bloco{
+    width: 90%;
+    border-radius: 50px;
+    align-content: unset;
+    background-color: white;
+    border: 3px solid black;
+    margin-left: 5%;
+}
+
+.pull-right{
+    float: Right;
+}
+
+#btnDica{
+    width: 10%;
+    height: 38px;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 6px;
+    font-weight: bold;
+    background-color: #00a9dc;
+    margin-left: 60%;
+}
