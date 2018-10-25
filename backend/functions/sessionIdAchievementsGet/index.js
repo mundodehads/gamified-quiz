@@ -13,7 +13,7 @@ exports.handler = async (event) => {
       body: JSON.stringify(achievements)
     }
   } catch (error) {
-    console.log(error.name)
+    console.log(error)
     return {
       statusCode: 400,
       headers: {

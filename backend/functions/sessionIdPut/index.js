@@ -43,9 +43,11 @@ exports.handler = async (event) => {
     })
   }
 
-  function defineParamsToUpdateASession (session) {
+  function defineParamsToUpdateASession (getSession) {
     const now = new Date()
     const body = JSON.parse(event.body)
+
+    const session = Object.assign({}, getSession)
 
     if (body.hasOwnProperty('coins')) {
       session.cards.coinBalance += body.coins
@@ -99,8 +101,8 @@ exports.handler = async (event) => {
   async function isThereAnyAchievementUnlocked (session) {
     let achievementUnlock = false
 
-    for (let i = 0; i < session.achievements.length; i++) {
-      if (session.cards.playedTimes + 1 >= (5 * (i + 1)) &&
+    for (let i = 1; i < session.achievements.length; i++) {
+      if (session.cards.playedTimes >= (5 * i) &&
         !session.achievements[i].acquired
       ) {
         session.achievements[i].acquired = true
