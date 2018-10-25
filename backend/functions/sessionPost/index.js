@@ -87,22 +87,7 @@ exports.handler = async (event) => {
                 ],
                 answer: 0,
                 points: 10
-              }
-            ]
-          },
-          {
-            category: 'PROPOSIÇÕES',
-            title: 'Lista de exercícios 1 para treinar proposições',
-            points: 0,
-            maxPoints: 100,
-            tip: `
-              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
-                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>?</b> | se e somente se |
-              </p>
-            `,
-            questions: [
+              },
               {
                 question: `
                   2. Sejam as proposições:
@@ -121,22 +106,7 @@ exports.handler = async (event) => {
                 ],
                 answer: 2,
                 points: 10
-              }
-            ]
-          },
-          {
-            category: 'PROPOSIÇÕES',
-            title: 'Lista de exercícios 1 para treinar proposições',
-            points: 0,
-            maxPoints: 100,
-            tip: `
-              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
-                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>?</b> | se e somente se |
-              </p>
-            `,
-            questions: [
+              },
               {
                 question: `
                   3. Sejam as proposições:
@@ -155,22 +125,7 @@ exports.handler = async (event) => {
                 ],
                 answer: 1,
                 points: 10
-              }
-            ]
-          },
-          {
-            category: 'PROPOSIÇÕES',
-            title: 'Lista de exercícios 1 para treinar proposições',
-            points: 0,
-            maxPoints: 100,
-            tip: `
-              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
-                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>?</b> | se e somente se |
-              </p>
-            `,
-            questions: [
+              },
               {
                 question: `
                   4. Sejam as proposições:
@@ -189,22 +144,7 @@ exports.handler = async (event) => {
                 ],
                 answer: 2,
                 points: 10
-              }
-            ]
-          },
-          {
-            category: 'PROPOSIÇÕES',
-            title: 'Lista de exercícios 1 para treinar proposições',
-            points: 0,
-            maxPoints: 100,
-            tip: `
-              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
-                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>?</b> | se e somente se |
-              </p>
-            `,
-            questions: [
+              },
               {
                 question: `
                   5. Sejam as proposições:
@@ -223,22 +163,7 @@ exports.handler = async (event) => {
                 ],
                 answer: 3,
                 points: 10
-              }
-            ]
-          },
-          {
-            category: 'PROPOSIÇÕES',
-            title: 'Lista de exercícios 1 para treinar proposições',
-            points: 0,
-            maxPoints: 100,
-            tip: `
-              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
-                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>?</b> | se e somente se |
-              </p>
-            `,
-            questions: [
+              },
               {
                 question: `
                   6. Sejam as proposições:
@@ -257,22 +182,7 @@ exports.handler = async (event) => {
                 ],
                 answer: 1,
                 points: 10
-              }
-            ]
-          },
-          {
-            category: 'PROPOSIÇÕES',
-            title: 'Lista de exercícios 1 para treinar proposições',
-            points: 0,
-            maxPoints: 100,
-            tip: `
-              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
-                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>?</b> | se e somente se |
-              </p>
-            `,
-            questions: [
+              },
               {
                 question: `
                   7. Sejam as proposições:
@@ -291,22 +201,7 @@ exports.handler = async (event) => {
                 ],
                 answer: 1,
                 points: 10
-              }
-            ]
-          },
-          {
-            category: 'PROPOSIÇÕES',
-            title: 'Lista de exercícios 1 para treinar proposições',
-            points: 0,
-            maxPoints: 100,
-            tip: `
-              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
-                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>?</b> | se e somente se |
-              </p>
-            `,
-            questions: [
+              },
               {
                 question: `
                   8. Sejam as proposições:
@@ -325,22 +220,7 @@ exports.handler = async (event) => {
                 ],
                 answer: 0,
                 points: 10
-              }
-            ]
-          },
-          {
-            category: 'PROPOSIÇÕES',
-            title: 'Lista de exercícios 1 para treinar proposições',
-            points: 0,
-            maxPoints: 100,
-            tip: `
-              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
-                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>?</b> | se e somente se |
-              </p>
-            `,
-            questions: [
+              },
               {
                 question: `
                   9. Sejam as proposições:
@@ -359,22 +239,7 @@ exports.handler = async (event) => {
                 ],
                 answer: 3,
                 points: 10
-              }
-            ]
-          },
-          {
-            category: 'PROPOSIÇÕES',
-            title: 'Lista de exercícios 1 para treinar proposições',
-            points: 0,
-            maxPoints: 100,
-            tip: `
-              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
-                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                <br/>| <b>?</b> | se e somente se |
-              </p>
-            `,
-            questions: [
+              },
               {
                 question: `
                   10. Sejam as proposições:
