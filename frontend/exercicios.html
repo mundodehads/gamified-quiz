@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/skins/lightblue.css">
     <link rel="stylesheet" href="/assets/css/custom.css">
+
+    <script src="/assets/js/integration/main.js"></script>
 </head>
 
 <body>
@@ -34,7 +36,7 @@
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
                             <i class="ion ion-android-person d-lg-none"></i>
-                            <div class="d-sm-none d-lg-inline-block">Olá, Fulano</div>
+                            <div id="nameLogout" class="d-sm-none d-lg-inline-block">Olá, </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a href="/" class="dropdown-item has-icon">
@@ -50,9 +52,9 @@
                     <h1 class="section-header">
                         <div>Exercícios</div>
                     </h1>
-                    <div class="row">
+                    <div id="tasks" class="row">
 
-                        <div class="col-12 col-sm-6 col-lg-3">
+                        <!-- <div class="col-12 col-sm-6 col-lg-3">
                             <a class="ex1" data-toggle="modal" data-target="#myModal">
                                 <div class="card card-dark">
                                     <div class="card-header">
@@ -118,7 +120,7 @@
                                     Lista de exercícios 2 para treinar operadores lógicos
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </section>
             </div>
@@ -137,24 +139,38 @@
     <script src="/assets/js/scripts.js"></script>
     <script src="/assets/js/custom.js"></script>
     <script src="/assets/js/sideBar.js"></script>
-    <script src="/assets/js/exercicios.js"></script>
+    <script src="/assets/js/integration/exercicios.js"></script>
 </body>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="taskModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="taskModalHead" class="modal-header"></div>
+            <div id="taskModalDica" class="escondido bloco"></div>
+            <div id="taskModalBody" class="modal-body"></div>
+        </div>
+    </div>
+</div>
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Exercício X</h5>
+                <h5 class="modal-title" id="myModalLabel">Exercício X</h5>
                 <div onclick="dica();" class="pull-right" id="btnDica">
                     <i class="ion ios-bulb-outline"></i> Dica</div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="fecharModal()">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal()">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="escondido bloco" id="dicas">
-                <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
-                    <br/>| <b>∧</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                    <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
-                    <br/>| <b>↔</b> | se e somente se |
+                <p>|
+                    <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
+                    <br/>|
+                    <b>∧</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                    <br/>|
+                    <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                    <br/>|
+                    <b>↔</b> | se e somente se |
                 </p>
             </div>
             <div class="modal-body">
@@ -402,7 +418,7 @@
                     <div class="btn btn-orange" onclick="fim();">Enviar</div>
                 </form>
 
-                <!-- <h3 class="m-bottom-20">Pergunta 1</h3>
+                <h3 class="m-bottom-20">Pergunta 1</h3>
                 <h4 class="m-bottom-20">Das frases abaixo, a única que representa uma proposição é:</h4>
                 <div class="row">
                     <div class="col-5 alternativa">
@@ -454,9 +470,9 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="fecharModal()">Enviar</button>
                  <button type="button" class="btn btn-primary">Save changes</button> 
-            </div>-->
+            </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </html>

@@ -9,10 +9,6 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true
-      },
       body: JSON.stringify({
         sessionId: sessionParams.Item.sessionId
       })
@@ -21,10 +17,6 @@ exports.handler = async (event) => {
     console.log(error.name)
     return {
       statusCode: 400,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true
-      },
       body: JSON.stringify({ message: error.message })
     }
   }
@@ -39,17 +31,17 @@ exports.handler = async (event) => {
         sessionId: generateUUID(),
         name: body.name,
         createdAt: now.toISOString(),
-        practiceTimes: 0,
         cards: {
           playedTimes: 0,
           achievementsAcquired: 0,
-          coinBalance: 0
+          coinBalance: 10
         },
         barChart: {
           labels: [now.toISOString().split('T')[0]],
           data: [0]
         },
         achievements: [
+          { title: 'PRIMEIRO LOGIN', description: 'Conquista para quem entrou pela primeira vez', acquired: true, rarity: 1 },
           { title: 'PRATICOU 5 VEZES', description: 'Conquista para quem completou 5 exercícios', acquired: false, rarity: 1 },
           { title: 'PRATICOU 10 VEZES', description: 'Conquista para quem completou 10 exercícios', acquired: false, rarity: 2 },
           { title: 'PRATICOU 15 VEZES', description: 'Conquista para quem completou 15 exercícios', acquired: false, rarity: 3 },
@@ -61,16 +53,337 @@ exports.handler = async (event) => {
             title: 'Lista de exercícios 1 para treinar proposições',
             points: 0,
             maxPoints: 100,
+            tip: `
+              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
+                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>?</b> | se e somente se |
+              </p>
+            `,
             questions: [
               {
-                question: 'Das frases abaixo, a única que representa uma proposição é:',
+                question: `
+                  1. Sejam as proposições:
+                  <br/>
+                  <b>p: Yoshi gosta de fruta. q: Yoshi é um dinossauro.</b>
+                  <p>Qual alternativa abaixo traduz para a linguagem simbólica:
+                    <br/>
+                    <b>“Yoshi gosta de fruta e não é um dinossauro”:</b>
+                  </p>
+                `,
                 possibleAnswers: [
-                  'Que frio!',
-                  'Você foi à aula ontem?',
-                  'Ele trabalhou durante todo o evento ontem.',
-                  'Carlos é um menino alto.'
+                  'p ? ~q',
+                  'p ? q',
+                  '~p V ~q',
+                  'p ? ~~q'
+                ],
+                answer: 0,
+                points: 10
+              }
+            ]
+          },
+          {
+            category: 'PROPOSIÇÕES',
+            title: 'Lista de exercícios 1 para treinar proposições',
+            points: 0,
+            maxPoints: 100,
+            tip: `
+              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
+                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>?</b> | se e somente se |
+              </p>
+            `,
+            questions: [
+              {
+                question: `
+                  2. Sejam as proposições:
+                  <br/>
+                  <b>p: Kirby é rosa, q: Kirby é uma bolinha.</b>
+                  <p>Qual alternativa abaixo traduz para a linguagem corrente:
+                    <br/>
+                    <b>“~p -> q”:</b>
+                  </p>
+                `,
+                possibleAnswers: [
+                  'Kirby não é rosa nem bolinha',
+                  'kirby é rosa  ou é bolinha',
+                  'Se kirby não é rosa então é bolinha',
+                  'Kirby é rosa se e somente se não é bolinha'
+                ],
+                answer: 2,
+                points: 10
+              }
+            ]
+          },
+          {
+            category: 'PROPOSIÇÕES',
+            title: 'Lista de exercícios 1 para treinar proposições',
+            points: 0,
+            maxPoints: 100,
+            tip: `
+              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
+                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>?</b> | se e somente se |
+              </p>
+            `,
+            questions: [
+              {
+                question: `
+                  3. Sejam as proposições:
+                  <br/>
+                  <b>p: Mario é um encanador, q: Sonic coleta moedas.</b>
+                  <p>Qual alternativa abaixo traduz para a linguagem simbólica:
+                    <br/>
+                    <b>“Mario não é um encanador ou Sonic coleta moedas”:</b>
+                  </p>
+                `,
+                possibleAnswers: [
+                  '~~q',
+                  '~p V q',
+                  'p V q',
+                  'q -> p'
+                ],
+                answer: 1,
+                points: 10
+              }
+            ]
+          },
+          {
+            category: 'PROPOSIÇÕES',
+            title: 'Lista de exercícios 1 para treinar proposições',
+            points: 0,
+            maxPoints: 100,
+            tip: `
+              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
+                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>?</b> | se e somente se |
+              </p>
+            `,
+            questions: [
+              {
+                question: `
+                  4. Sejam as proposições:
+                  <br/>
+                  <b>p: Darius é fraco, q: Jinx é maníaca.</b>
+                  <p>Qual alternativa abaixo traduz para a linguagem simbólica:
+                    <br/>
+                    <b>“Jinx não é maníaca ou Daruis é forte”:</b>
+                  </p>
+                `,
+                possibleAnswers: [
+                  '~~q ? p',
+                  '~q V p',
+                  '~q V ~p',
+                  'q -> p'
+                ],
+                answer: 2,
+                points: 10
+              }
+            ]
+          },
+          {
+            category: 'PROPOSIÇÕES',
+            title: 'Lista de exercícios 1 para treinar proposições',
+            points: 0,
+            maxPoints: 100,
+            tip: `
+              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
+                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>?</b> | se e somente se |
+              </p>
+            `,
+            questions: [
+              {
+                question: `
+                  5. Sejam as proposições:
+                  <br/>
+                  <b>p: Yoshi gosta de fruta, q: Mario é um encanador.</b>
+                  <p>Qual alternativa abaixo traduz para a linguagem corrente:
+                    <br/>
+                    <b>“q V ~p”:</b>
+                  </p>
+                `,
+                possibleAnswers: [
+                  'Mario não é encanador e Yoshi gosta de fruta',
+                  'Yoshi não gosta de fruta se e somente se Mario não é encanador',
+                  'Yoshi gosta de fruta ou mario não é encanador',
+                  'Mario é encanador ou yoshi não gosta de fruta'
                 ],
                 answer: 3,
+                points: 10
+              }
+            ]
+          },
+          {
+            category: 'PROPOSIÇÕES',
+            title: 'Lista de exercícios 1 para treinar proposições',
+            points: 0,
+            maxPoints: 100,
+            tip: `
+              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
+                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>?</b> | se e somente se |
+              </p>
+            `,
+            questions: [
+              {
+                question: `
+                  6. Sejam as proposições:
+                  <br/>
+                  <b>p: Kirby é rosa, q: Kirby é uma bolinha.</b>
+                  <p>Qual alternativa abaixo traduz para a linguagem simbólica:
+                    <br/>
+                    <b>“Kirby é rosa e não é uma bolinha”:</b>
+                  </p>
+                `,
+                possibleAnswers: [
+                  '~~p',
+                  '~~p ? ~q',
+                  'p ? q',
+                  'q -> p'
+                ],
+                answer: 1,
+                points: 10
+              }
+            ]
+          },
+          {
+            category: 'PROPOSIÇÕES',
+            title: 'Lista de exercícios 1 para treinar proposições',
+            points: 0,
+            maxPoints: 100,
+            tip: `
+              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
+                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>?</b> | se e somente se |
+              </p>
+            `,
+            questions: [
+              {
+                question: `
+                  7. Sejam as proposições:
+                  <br/>
+                  <b>p: Mario é um encanador, q: Sonic é azul.</b>
+                  <p>Qual alternativa abaixo traduz para a linguagem simbólica:
+                    <br/>
+                    <b>“Mario é um encanador e Sonic não é azul”:</b>
+                  </p>
+                `,
+                possibleAnswers: [
+                  '~~q ? p',
+                  'p ? ~q',
+                  'p v q',
+                  'q -> p'
+                ],
+                answer: 1,
+                points: 10
+              }
+            ]
+          },
+          {
+            category: 'PROPOSIÇÕES',
+            title: 'Lista de exercícios 1 para treinar proposições',
+            points: 0,
+            maxPoints: 100,
+            tip: `
+              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
+                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>?</b> | se e somente se |
+              </p>
+            `,
+            questions: [
+              {
+                question: `
+                  8. Sejam as proposições:
+                  <br/>
+                  <b>p: Yoshi gosta de fruta, q: Yoshi é um dinossauro.</b>
+                  <p>Qual alternativa abaixo traduz para a linguagem simbólica:
+                    <br/>
+                    <b>“Yoshi é um dinossauro, se e somente se come fruta”:</b>
+                  </p>
+                `,
+                possibleAnswers: [
+                  'q <-> p',
+                  '~p v q',
+                  'p v q',
+                  'q -> ~p'
+                ],
+                answer: 0,
+                points: 10
+              }
+            ]
+          },
+          {
+            category: 'PROPOSIÇÕES',
+            title: 'Lista de exercícios 1 para treinar proposições',
+            points: 0,
+            maxPoints: 100,
+            tip: `
+              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
+                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>?</b> | se e somente se |
+              </p>
+            `,
+            questions: [
+              {
+                question: `
+                  9. Sejam as proposições:
+                  <br/>
+                  <b>p: Mario é um encanador, q: Sonic coleta moedas.</b>
+                  <p>Qual alternativa abaixo traduz para a linguagem simbólica:
+                    <br/>
+                    <b>“Mario é um encanador”:</b>
+                  </p>
+                `,
+                possibleAnswers: [
+                  '~~q',
+                  '~p v q',
+                  'p v ~~q',
+                  '~~p'
+                ],
+                answer: 3,
+                points: 10
+              }
+            ]
+          },
+          {
+            category: 'PROPOSIÇÕES',
+            title: 'Lista de exercícios 1 para treinar proposições',
+            points: 0,
+            maxPoints: 100,
+            tip: `
+              <p>| <b>~</b> | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp NÃO &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp |
+                <br/>| <b>?</b> |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>V</b> &nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp OU &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|
+                <br/>| <b>?</b> | se e somente se |
+              </p>
+            `,
+            questions: [
+              {
+                question: `
+                  10. Sejam as proposições:
+                  <br/>
+                  <b>p: Darius é fraco , q: Jinx é maníaca.</b>
+                  <p>Qual alternativa abaixo traduz para a linguagem corrente:
+                    <br/>
+                    <b>“~( p v ~q )”:</b>
+                  </p>
+                `,
+                possibleAnswers: [
+                  'Darius é forte ou Jinx é maníaca',
+                  'Darius é fraco ou Jinx não é maníaca',
+                  'Darius é forte se e somente se Jinx é maníaca',
+                  'Jinx é maníaca se Darius é fraco'
+                ],
+                answer: 0,
                 points: 10
               }
             ]

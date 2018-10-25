@@ -29,7 +29,7 @@ exports.handler = async (event) => {
       dynamo.get({
         TableName: 'Session',
         Key: { sessionId: event.pathParameters.sessionId },
-        AttributesToGet: ['tasks', 'name'],
+        AttributesToGet: ['tasks', 'name', 'cards'],
         Select: 'SPECIFIC_ATTRIBUTES'
       }, (error, data) => {
         if (error) reject(error)
