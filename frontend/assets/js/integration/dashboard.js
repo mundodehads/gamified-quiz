@@ -3,7 +3,7 @@ let url = `https://df0d3wv4t9.execute-api.us-east-1.amazonaws.com/prod/session/$
 fetch(url)
   .then(response => {
     if (!response.ok) {
-      throw new Error(`[${response.status}] /${crud.path}`)
+      throw new Error(`[${response.status}] /${url}`)
     }
     return response.json()
   })
